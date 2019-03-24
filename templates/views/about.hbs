@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="icon" href="/img/weather.png">
     <title>{{title}}</title>
@@ -8,6 +11,7 @@
 <body>
     <div class="main-content">
         {{>header}}
+        <p>This site was created by {{ name }}. It uses data from <a href="https://www.mapbox.com/" target="blank">mapbox.com</a> and <a href="https://darksky.net/" target="blank">darksky.net</a>!</p>
         <img class="portrait" src="/img/owl.png" alt="Styled Owl Drawing">
     </div>
     {{>footer}}

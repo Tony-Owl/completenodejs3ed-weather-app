@@ -1,22 +1,9 @@
-// API key:
-const darksky = require('./apiKeys/darksky');
-//  Darksky API (https://darksky.net/dev)
-//   Template URL:
-//     const lat = 37.8267
-//     const lon = -122.4233
-//     https://api.darksky.net/forecast/${darksky.key}/${lat},${lon}
-//
-// Customazible Options (query string: url?key=value&otherKey=otherValue):
-//     exclude=[blocks] -> currently, minutely, hourly, daily, alerts, flags
-//     extend=hourly -> (from 48h to 168h)
-//     lang=[language] -> de, en, es, fr, it, ja, pt etc.
-//     units=[units] -> us, si
-//
-
 const request = require('request');
 
+const darkskyKey = '07dd58eb19750d7ca03b5bd7be560f2e';
+
 const forecast = (latitude, longitude, callback) => {
-    const url = `https://api.darksky.net/forecast/${darksky.key}/${latitude},${longitude}?units=si`;
+    const url = `https://api.darksky.net/forecast/${darkskyKey}/${latitude},${longitude}?units=si`;
 
     request({ url, json: true }, (error, { body } = {})=>{
         if (error) {

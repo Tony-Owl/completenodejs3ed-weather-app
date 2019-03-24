@@ -17,7 +17,7 @@ const port = process.env.PORT || 3000;
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
-const author = 'Tony Owl';
+const author = 'Tony Bezerra';
 
 // Setup handlebars enginge and views/partials location:
 app.set('view engine', 'hbs');
@@ -44,7 +44,7 @@ app.get('/about', (req, res) => {
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        helpText: 'This is some helpful text.',
+        helpText: 'Under construction.',
         title: 'Help',
         name: author
     })

@@ -1,16 +1,11 @@
-// API Key:
-const mapbox = require('./apiKeys/mapbox');
-//  Mapbox API (https://docs.mapbox.com/api/search/)
-//   Template URL:
-//     const searchText = encodeURI('string with the address');
-//     https://api.mapbox.com/geocoding/v5/mapbox.places/{searchText}.json?token=${mapbox.key}&limit=1
-
 const request = require('request');
+
+const mapboxKey = 'pk.eyJ1IjoidG9ueW93bGFwaSIsImEiOiJjanQ3YnZ2OTIwcWZoNDNyMWEyZDE2ZXZjIn0.KSARRhm8kBXIyTovsqM7VA';
 
 const geocode = (address, callback) => {
 
-    const searchText = encodeURI(address);    
-    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${searchText}.json?access_token=${mapbox.key}&limit=1`;
+    const searchText = encodeURI(address);
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${searchText}.json?access_token=${mapboxKey}&limit=1`;
 
     request({ url, json: true}, (error, { body } = {}) => {        
         if(error){
